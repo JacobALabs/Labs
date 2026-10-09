@@ -438,7 +438,7 @@ The WAN interface is `em0`, the FreeBSD driver name for the E1000 virtual NIC.
 ---
 
 ## 7. Lab exercises
-
+*Disclaimer - Not all Labs listed are completed yet, many are still planned.*
 | # | Exercise | Attacker action (Kali) | Detection |
 |---|----------|------------------------|-----------|
 | 1 | Network enumeration | `nmap` service and OS scan of `10.10.20.0/24` | Snort scan signatures, pfSense logs, Sysmon EID 3 on the targets |
@@ -456,24 +456,7 @@ Each exercise follows the same loop: snapshot the targets, declare the window, r
 
 ---
 
-## 8. Screenshots
-
-| # | Screenshot | What it shows |
-|---|------------|---------------|
-| 1 | Create VM, Memory tab | Memory set to 1024 MiB. Background shows the `local` ISO list with `netgate-installer-v1.2-RELEASE-amd64.iso` (1010.17 MiB). |
-| 2 | Add Network Device dialog | Bridge "Internal", model Intel E1000, VLAN Tag "no VLAN", MAC "auto", Firewall unchecked. |
-| 3 | VM 100 Hardware tab, Add menu open | Hardware list with 1 GiB memory, 1 core CPU, 32 GB disk, ISO on the CD/DVD drive, and the E1000 NIC on `vmbr0` with tag 1. The Add menu offers Hard Disk, Network Device, CD/DVD, and others. |
-| 4 | Node `admin` > System > Network | Network list with the Linux Bridge (Active, Autostart, port `nic0`) and the Create menu open. |
-| 5 | Create VM, General tab | Node `admin`, VM ID `100`, Name field, HA unchecked. |
-| 6 | Create VM, OS tab | ISO selected from storage `local`, Guest OS type Other. |
-| 7 | pfSense installer, Welcome screen | Netgate Installer v1.2-RELEASE welcome dialog with "Install pfSense" highlighted. |
-| 8 | pfSense installer, WAN network mode | WAN (em0) set to DHCP (client), VLAN tagging disabled, Continue highlighted. |
-| 9 | Proxmox task viewer | ISO download log from `shop.netgate.com`, 342,781,760 bytes, **TASK OK**. |
-| 10 | Storage `local` > ISO Images | ISO `netgate-installer-v1.2-RELEASE-amd64.iso` listed (1010.17 MiB, format `iso`). |
-
----
-
-## 9. Issues encountered
+## 8. Issues encountered
 
 - **Failed "Update package database" tasks on the Proxmox node.** Two `apt-get update` tasks failed, on 2026-09-14 at 21:54 and 2026-09-15 at 03:55.
 - **Wizard vs. saved NIC configuration mismatch on VM 100.** The network step showed "no VLAN", but the saved hardware shows `tag=1` on `vmbr0`. Resolution: treat the Hardware tab as the authoritative record and verify every NIC after VM creation.
@@ -485,7 +468,7 @@ Each exercise follows the same loop: snapshot the targets, declare the window, r
 
 ---
 
-## 10. Lessons learned
+## 9. Lessons learned
 
 - **Check the NIC tag after creating a VM.** The wizard offered "no VLAN", but the saved NIC has `tag=1`. The Hardware tab shows the final configuration.
 - **Verify ISO checksums.** The download task log records the transfer; compare the ISO against Netgate's published hash before installing.
@@ -501,7 +484,7 @@ Each exercise follows the same loop: snapshot the targets, declare the window, r
 
 ---
 
-## 11. Next steps
+## 10. Next steps
 
 - Extend the exercise set to include DCSync, Golden Ticket and AS-REP roasting, with matching detection content in Kibana.
 - Add a second domain controller and a Windows 11 endpoint to test replication events and cross-version Sysmon coverage.
@@ -512,7 +495,7 @@ Each exercise follows the same loop: snapshot the targets, declare the window, r
 
 ---
 
-## 12. Scope and safety
+## 11. Scope and safety
 
 This lab is an **isolated training environment on a single Proxmox host** behind a pfSense firewall. Offensive tooling — Kali, Impacket, Mimikatz-class credential access — is used **only** against lab VMs that the author owns and controls, on private RFC1918 lab subnets, with no routing to production networks and no use of these techniques against any third-party system. Internet-facing attack traffic is blocked at the firewall. The purpose is defensive skill development: understanding how attacks appear in logs so they can be detected, triaged and contained.
 

@@ -1,6 +1,6 @@
 # Local SOC Sandbox Environment Setup (Home SOC Lab)
 
-> **AI disclosure:** AI assistance was used for **documentation only** — structuring, formatting and writing this README from the author's screenshots and notes. The lab design, network layout, installation, configuration, hardening and all testing/attack exercises were performed manually by the author. No AI tool was used to build, configure or operate any part of the lab.
+> **AI disclosure:** AI assistance was used for **documentation only** — structuring, formatting and writing this README from the author's screenshots and notes. The lab design, network layout, installation, configuration, hardening and all completed testing/attack exercises were performed manually by the author. No AI tool was used to build, configure or operate any part of the lab.
 
 ---
 

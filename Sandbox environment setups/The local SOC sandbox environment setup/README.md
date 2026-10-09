@@ -15,7 +15,7 @@ This is a home Security Operations Center (SOC) lab built on a single Proxmox VE
 | Hypervisor | Proxmox Virtual Environment **9.2.2**, node name `admin` |
 | Firewall VM | **pfSense**, VM ID `100`, name `PFSense` |
 | Host management network | Linux bridge `vmbr0` on physical NIC `nic0` (bridge is "Active" and "Autostart") |
-| Host management address | `10.0.255.198/8`, gateway `10.0.0.2` |
+| Host management address | [redacted] (upstream/gateway details withheld) |
 | Storage | `local` (ISO images and templates), `local-lvm` (VM disks) |
 
 ### Virtual Machines
@@ -55,7 +55,7 @@ This is a home Security Operations Center (SOC) lab built on a single Proxmox VE
 #### 2. Create the host bridge (node network)
 
 - Go to **admin > System > Network** and open the **Create** menu. Options include Linux Bridge, Linux Bond, Linux VLAN, OVS Bridge, OVS Bond, and OVS IntPort.
-- The existing bridge is a **Linux Bridge** (Active: Yes, Autostart: Yes) with port `nic0`, address `10.0.255.198/8`, and gateway `10.0.0.2`. The bridge name is hidden by the open menu in the screenshot. The VM NIC is attached to `vmbr0`, so that is the bridge in use.
+- The existing bridge is a **Linux Bridge** (Active: Yes, Autostart: Yes) with port `nic0` and a management address on the upstream network (details withheld). The bridge name is hidden by the open menu in the screenshot. The VM NIC is attached to `vmbr0`, so that is the bridge in use.
 
 #### 3. Create the VM
 
@@ -91,7 +91,7 @@ The screenshots are described below. The image files are not yet committed to th
 | 1 | Create VM, Memory tab | Memory set to 1024 MiB. Background shows the `local` ISO list with `netgate-installer-v1.2-RELEASE-amd64.iso` (1010.17 MiB). |
 | 2 | Add Network Device dialog | Bridge "Internal", model Intel E1000, VLAN Tag "no VLAN", MAC "auto", Firewall unchecked. |
 | 3 | VM 100 Hardware tab, Add menu open | Hardware list with the 1 GiB memory, 1 core CPU, 32 GB disk, ISO on the CD/DVD drive, and the E1000 NIC on `vmbr0` with tag 1. The Add menu offers Hard Disk, Network Device, CD/DVD, and others. |
-| 4 | Node `admin` > System > Network | Network list with the Linux Bridge (Active, Autostart, port `nic0`, `10.0.255.198/8`, gateway `10.0.0.2`) and the Create menu open. |
+| 4 | Node `admin` > System > Network | Network list with the Linux Bridge (Active, Autostart, port `nic0`, management address redacted) and the Create menu open. |
 | 5 | Create VM, General tab | Node `admin`, VM ID `100`, name empty (later set to PFSense), HA unchecked. |
 | 6 | Create VM, OS tab | ISO selected from storage `local`, Guest OS type Other. |
 | 7 | pfSense installer, Welcome screen | Netgate Installer v1.2-RELEASE welcome dialog with "Install pfSense" highlighted. |

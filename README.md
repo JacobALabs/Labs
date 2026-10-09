@@ -10,6 +10,6 @@
 
 | Category | Lab | Stack | Status |
 |----------|-----|-------|--------|
-| Sandbox environments | [The local SOC sandbox environment setup](./Sandbox%20environment%20setups/The%20local%20SOC%20sandbox%20environment%20setup/README.md) | Proxmox VE, pfSense, ELK stack, Snort, Kali Linux, Windows 10, Windows Server 2019 (AD) | In progress |
+| Sandbox environments | [The local SOC sandbox environment setup](./Sandbox%20environment%20setups/The%20local%20SOC%20sandbox%20environment%20setup/README.md) | Proxmox VE, pfSense, ELK stack, Snort, Kali Linux, Windows 10, Windows Server 2019 (AD) | Active |
 
 Browse all sandbox environments: [Sandbox environment setups](./Sandbox%20environment%20setups/README.md)

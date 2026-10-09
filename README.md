@@ -1,5 +1,5 @@
 # Welcome to my labs showcase
-### I will use this github repo to showcase labs which I have completed.
+### I will use this github repo to showcase labs which I have been working on.
 #### This will mostly consist of cybersecurity or cloud related labs as this is where my large interest is, I may also perform AI/LLM related labs as the opensource local models advance.
 
 > **AI disclosure:** AI assistance is used in this repository for **documentation only** — structuring and writing the README files from my own screenshots and notes. All lab design, build, configuration and testing is performed manually by me.
